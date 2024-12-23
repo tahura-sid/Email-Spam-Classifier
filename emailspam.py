@@ -40,7 +40,7 @@ def tranform_text(text):
 if st.button('predict'):
     tranform_msg = tranform_text(text)
     vectorize = vectorizer.transform([tranform_msg])
-    result = model.predict(vectorize)[0]
+    result = model.predict(vectorize.toarray())[0]
     if result == 1:
         st.header('Spam')
     else:
