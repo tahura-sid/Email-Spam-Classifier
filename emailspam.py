@@ -5,7 +5,8 @@ import nltk
 from nltk.stem.porter import PorterStemmer
 import string
 ps = PorterStemmer()
-
+nltk.download('punkt_tab')
+nltk.download("stopwords")
 st.title('Email Spam CLassifier')
 text = st.text_area('Paste your message')
 vectorizer = pkl.load(open("vectorizer.pkl",'rb'))
